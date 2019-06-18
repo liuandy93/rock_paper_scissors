@@ -28,14 +28,11 @@
 
                 if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'paper') {
                     console.log("The computer chose paper. Paper beats rock, you lose!");
-                }
-                if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'scissors'){
+                } else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'scissors'){
                     console.log("The computer chose scissors. Scissors beats paper, you lose!")
-                }
-                if (playerSelection.toLowerCase() === 'scissors' && computerSelection === 'rock') {
+                } else if (playerSelection.toLowerCase() === 'scissors' && computerSelection === 'rock') {
                     console.log("The computer chose rock. Rock beats scissors, you lose!")
-                }
-                if (playerSelection === computerPlay()) {
+                } else if (playerSelection === computerPlay()) {
                     console.log("The round ended in a draw");
                 } 
             }

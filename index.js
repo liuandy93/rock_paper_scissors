@@ -1,32 +1,19 @@
 /* get user's input */
-let userChoice = prompt("Please choose rock, paper, or scissors.");
-userChoice.toLowerCase();
-
-/* convert user's input into index */
+let userIndex;
+let userChoice;
+let result;
+let gameTurn = 0;   
 let gameArray = ['rock', 'paper', 'scissors'];
-let userIndex = gameArray.indexOf(userChoice);
-
-
-/* generate computer's choice */
-let randomNum = Math.floor(Math.random() * 3);
-let computerChoice = gameArray[randomNum];
-
-
-/* log the each choices on the console */
-console.log("You chose " + userChoice + (". The computer chose " + computerChoice + "."));
-
+let rock = document.querySelector('#rock');
+let paper = document.querySelector('#paper');
+let scissors = document.querySelector('#scissors');
 
 /* make a two dimensional array */
 let gameOutcome = [
-                   ['t','y','l'],
-                   ['l','t','y'],
-                   ['y','l','t'],
-                ];
-
-
-/* use userChoice index (because in the end we just need the user result) to find the result in this two dimensional array */
-let result = gameOutcome[randomNum][userIndex];
-
+    ['t','y','l'],
+    ['l','t','y'],
+    ['y','l','t'],
+ ];
 
 /* make an object to convert the final result into a sentence, so we can log it on the console */
 let finalResult = {
@@ -35,4 +22,37 @@ let finalResult = {
     'l': "You lost the game!"
 };
 
-console.log(finalResult[result]);
+/* generate computer's choice */
+let randomNum = Math.floor(Math.random() * 3);
+let computerChoice = gameArray[randomNum];
+
+let gameStart = () => {
+    gameRound = document.getElementById('gameRound').value
+    while (gameRound > gameTurn) {
+        
+    }
+}
+
+let resultFunc = () => {
+    result = gameOutcome[randomNum][userChoice];
+    //console.log(finalResult[result]);
+    userIndex = gameArray[userChoice];
+    document.getElementById('gameText').innerHTML = finalResult[result]+ " You chose " + userIndex + ". The computer chose " + computerChoice + ".";
+};
+
+rock.addEventListener('click', () => {
+    userChoice = gameArray.indexOf('rock');
+    resultFunc();
+});
+
+paper.addEventListener('click', () => {
+    userChoice = gameArray.indexOf('paper');
+    resultFunc();
+});
+
+scissors.addEventListener('click', () => {
+    userChoice = gameArray.indexOf('scissors');
+    resultFunc();
+});
+
+

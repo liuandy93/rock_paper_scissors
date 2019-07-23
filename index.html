@@ -9,56 +9,39 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
+        <script src="https://kit.fontawesome.com/c17d33cc42.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    </head>
+        <link rel="stylesheet" href="index.css">
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <script>
+        <container class="d-flex justify-content-center">
+        <div class="p-5 ani" id="rock">
+            <i class="fas fa-hand-rock fa-10x"></i>
+        </div>
 
-            let computerPlay = () => {
-                let compChoice = ['rock', 'paper', 'scissors'];
-                let compIndex = Math.floor(Math.random() * 3);
-                return compChoice[compIndex];
-            }
+        <div class="p-5 ani" id="paper">
+            <i class="fas fa-hand-paper fa-10x"></i>
+        </div>
 
-            let playRound = (playerSelection, computerSelection) => {
+        <div class="p-5 ani" id="scissors">
+            <i class="fas fa-hand-scissors fa-10x"></i>
+        </div>        
+        </container>
 
-                if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'paper') {
-                    console.log("You chose rock. The computer chose paper. Paper beats rock, you lose!");
-                } else if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'scissors'){
-                    console.log("You chose rock. The computer chose scissors. Rock beats scissors, you win!")
-                } else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'rock') {
-                    console.log("You chose paper, the computer chose rock. You win!")
-                } else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'scissors'){
-                    console.log("You chose paper, the computer chose scissors. You lose!")
-                }  else if (playerSelection.toLowerCase() === 'scissors' && computerSelection === 'rock'){
-                    console.log("You chose scissors, the computer chose rock. You lose!")
-                } else if (playerSelection.toLowerCase() === 'scissors' && computerSelection === 'paper'){
-                    console.log("You chose scissors, the computer chose paper. You win!")
-                }  else if (playerSelection === computerSelection) {
-                    console.log("You chose " + playerSelection + ". The computer chose "
-                    + computerSelection + ". The round is a draw!");
-                }
-            }
-            
-            let game = () => {
+        <div id="gameText" class="d-flex justify-content-center">
+            <p>Please choose rock, paper, or scissors.</p>
+        </div>
+        <form onsubmit="">
+        <label class="d-flex justify-content-center">Number of Rounds:
+        <input id="gameRound" type="number" min="1" max="10"><input class="m-2" type="button" value="Go" onclick="gameStart()">
+        </label>
+        </form>
 
-                let numberOfRounds = 5;
-                for (let i = 0; i < numberOfRounds; i++) {
-                    playerSelection = prompt("Chose rock, paper, or scissors.");
-                    computerSelection = computerPlay();
-                    console.log(playRound(playerSelection, computerSelection));
-                }
 
-            }
+ 
 
         
             
         
-        
-        </script>
+        <script src="index.js"></script>
     </body>
 </html>

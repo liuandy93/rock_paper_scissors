@@ -28,13 +28,19 @@
         </container>
 
         <div id="gameText" class="d-flex justify-content-center">
-            <p>Please choose rock, paper, or scissors.</p>
+            <p>Welcome to the RPC game!</p>
         </div>
-        <form onsubmit="">
-        <label class="d-flex justify-content-center">Number of Rounds:
-        <input id="gameRound" type="number" min="1" max="10"><input class="m-2" type="button" value="Go" onclick="gameStart()">
-        </label>
-        </form>
+        <div class="d-flex justify-content-center">Player Score: <span class="pl-1" id="playerScore">0</span>
+        <p class="d-flex justify-content-center pl-3">Computer Score: <span class="pl-1" id="compScore">0</span></p>
+        </div>
+        <div class="d-flex justify-content-center">
+                <button onclick="gameStart()">Start</button>
+            </div>
+            <div class="d-flex justify-content-center pt-3">
+                    <button onclick="reset()">Reset</button>
+                </div>
+       
+        
 
 
  
